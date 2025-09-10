@@ -46,6 +46,8 @@ class FlyingRobot(BaseRobot):
             elif len(c1) == 3:
                 super().__init__(name, weight, [c1[0], c1[1]])
                 self.coords = [c1[0], c1[1], c1[2]]
+            else:
+                raise ValueError("Invalid coordinates")
 
     def go_up(self, step: int = 1) -> None:
         self.coords[2] += step
